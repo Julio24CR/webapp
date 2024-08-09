@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .hamburger {
+            background-color: white;
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .hamburger img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .hamburger h2 {
+            margin: 15px 0 10px;
+        }
+        .hamburger p {
+            color: #777;
+            margin: 0 0 15px;
+        }
+        .hamburger .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .hamburger button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .hamburger button:hover {
+            background-color: #e68a00;
+        }
+    </style>
+    <script>
+        // Initialize Telegram Web App
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Expands the web app to full height
+
+        function sendOrder(hamburgerName) {
+            tg.sendData(hamburgerName); // Sends the name of the selected hamburger to the bot
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hamburger Catalog</h1>
+    </header>
+
+    <div class="catalog">
+        <div class="hamburger">
+            <img src="https://via.placeholder.com/300" alt="Classic Burger">
+            <h2>Classic Burger</h2>
+            <p>Juicy beef patty, lettuce, tomato, cheese, and our special sauce.</p>
+            <div class="price">$5.99</div>
+            <button onclick="sendOrder('Classic Burger')">Add to Cart</button>
+        </div>
+
+        <div class="hamburger">
+            <img src="https://via.placeholder.com/300" alt="Cheeseburger">
+            <h2>Cheeseburger</h2>
+            <p>All the classic flavors with an extra layer of melted cheese.</p>
+            <div class="price">$6.49</div>
+            <button onclick="sendOrder('Cheeseburger')">Add to Cart</button>
+        </div>
+
+        <div class="hamburger">
+            <img src="https://via.placeholder.com/300" alt="Bacon Burger">
+            <h2>Bacon Burger</h2>
+            <p>Smoky bacon, crisp lettuce, tomato, and melted cheese.</p>
+            <div class="price">$6.99</div>
+            <button onclick="sendOrder('Bacon Burger')">Add to Cart</button>
+        </div>
+
+        <div class="hamburger">
+            <img src="https://via.placeholder.com/300" alt="Veggie Burger">
+            <h2>Veggie Burger</h2>
+            <p>A delicious plant-based patty with lettuce, tomato, and avocado.</p>
+            <div class="price">$5.49</div>
+            <button onclick="sendOrder('Veggie Burger')">Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>
